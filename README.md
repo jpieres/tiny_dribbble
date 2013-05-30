@@ -7,4 +7,4 @@ This is a simplified version of dribbble.com with only a few basic features:
 
 The test application can be found at:
 [*tiny_dribbble*](http://tiny_dribbble.herokuapp.com/)
-by [Juan Pîeres](es.linkedin.com/in/juanpieres/).
+by [Juan Pieres](http://es.linkedin.com/in/juanpieres/).
