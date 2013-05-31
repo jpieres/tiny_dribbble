@@ -1,11 +1,8 @@
 TinyDribbble::Application.routes.draw do
-  get "site/home"
-
-  get "site/about"
-
-  get "site/faq"
-
-  get "site/contact"
+  root to: 'site#home'
+  match '/about',   to: 'site#about'
+  match '/faq',    to: 'site#faq'
+  match '/contact', to: 'site#contact'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -13,11 +13,11 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to "tiny-dribbble", '#', id: "logo" %>
+          <%= link_to "tiny-dribbble", root_path, id: "logo" %>
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "Shots",    '#' %></li>
-              <li><%= link_to "About",    '#' %></li>
+              <li><%= link_to "About", about_path %></li>
               <li><%= link_to "Sign in", '#' %></li>
             </ul>
           </nav>
@@ -33,9 +33,9 @@
         </small>
         <nav>
           <ul>
-            <li><%= link_to "About",   '#' %></li>
-            <li><%= link_to "FAQ",   '#' %></li>
-            <li><%= link_to "Contact", '#' %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "FAQ", faq_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
           </ul>
         </nav>
       </footer>      

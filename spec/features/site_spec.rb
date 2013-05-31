@@ -2,36 +2,25 @@ require 'spec_helper'
 
 describe "Site pages" do
 
+  subject { page }
   describe "Home page" do
-
-    it "should have the content 'tiny-dribbble'" do
-      visit '/site/home'
-      page.should have_content('tiny-dribbble')
-    end
+    before { visit root_path }
+    it { should have_selector('h1', text: 'tiny-dribbble')}
   end
 
   describe "About page" do
-
-    it "should have the content 'About'" do
-      visit '/site/about'
-      page.should have_content('About')
-    end
+    before { visit about_path }
+    it { should have_text('About')}
   end
 
   describe "FAQ page" do
-
-    it "should have the content 'FAQ'" do
-      visit '/site/faq'
-      page.should have_content('FAQ')
-    end
+    before { visit faq_path }
+    it { should have_text('FAQ')}
   end
 
   describe "Contact page" do
-
-    it "should have the content 'Contact'" do
-      visit '/site/contact'
-      page.should have_content('Contact')
-    end
+    before { visit contact_path }
+    it { should have_text('Contact')}
   end
 
 end
