@@ -2,5 +2,9 @@
   <h1>tiny-dribbble</h1>
   <h2>Home</h2>
 
-  <%= link_to "Sign up now!", '#', class: "btn btn-small btn-primary" %>
+  <% if user_signed_in? %>
+    <p>Your shots here soon!</p>
+  <% else %>
+    <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-small btn-primary" %>
+  <% end %>
 </div>

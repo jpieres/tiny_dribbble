@@ -1,4 +1,6 @@
 TinyDribbble::Application.routes.draw do
+  devise_for :users
+
   root to: 'site#home'
   match '/about',   to: 'site#about'
   match '/faq',    to: 'site#faq'
