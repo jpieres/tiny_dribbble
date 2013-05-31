@@ -1,4 +1,12 @@
 TinyDribbble::Application.routes.draw do
+  get "site/home"
+
+  get "site/about"
+
+  get "site/faq"
+
+  get "site/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
