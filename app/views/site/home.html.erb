@@ -1,10 +1,26 @@
 <div class="hero-unit">
   <h1>tiny-dribbble</h1>
-  <h2>Home</h2>
-
-  <% if user_signed_in? %>
-    <p>Your shots here soon!</p>
-  <% else %>
-    <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-small btn-primary" %>
-  <% end %>
+  <h2>Home with fancy text.</h2>
+    <% unless user_signed_in? %>
+      <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-small btn-primary" %>
+    <% end %>
 </div>
+  <% @shots.each_slice(3) do |ts|%>
+    <div class="row-fluid">
+      <ul class="thumbnails">
+        <%= render ts %>
+      </ul>
+    </div>
+  <% end %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("img").parent().hover(function() {
+      $(this).stop().animate({opacity: "0"}, 'slow');
+      $(this).parent().find(".texto").stop().animate({opacity: "1"}, 'slow');
+      },
+    function() {
+      $(this).stop().animate({opacity: "1"}, 'slow');
+      $(this).parent().find(".texto").stop().animate({opacity: "0"}, 'slow');
+    });
+  });
+</script>

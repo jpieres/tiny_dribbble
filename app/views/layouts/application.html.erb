@@ -31,11 +31,13 @@
       </div>
     </header>
     <div class="container">
+      <%= flash_messages %>
       <% if user_signed_in? %>
+      <div class="row">
+        <div class="span3 pull-right">
         Logged in as <strong><%= current_user.email %></strong>.
-      <% end %>
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
+      </div>
+      </div>
       <% end %>
       <%= yield %>
       <footer class="footer">
