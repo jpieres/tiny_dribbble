@@ -1,19 +1,16 @@
-<li class="span4">
+<li class="span3">
   <div class="thumbnail" >
-  <div class="texto" style="position: absolute; opacity: 0; ">   
-    <%= shot.description %>
-  </div>
-  <div>
-      <%= image_tag("sample_10.jpg", :height => '200', :width => '300') %>
-  </div>
-
+    <div class="shot-description">   
+      <%= shot.description %>
+    </div>
+    <div>
+        <%= image_tag("sample_10.jpg") %>
+    </div>
     <div class="caption">
       <h6>
         <%= shot.user.name %>
         <a href="#" class="pull-right"><i class="icon-heart"></i> 237</a>
       </h6>
-
     </div>
   </div>
-
 </li>
