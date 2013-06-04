@@ -5,6 +5,7 @@ class SiteController < ApplicationController
     else
       @shots = Shot.all
     end
+
   end
 
   def about

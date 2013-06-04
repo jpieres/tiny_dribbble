@@ -5,17 +5,23 @@
       <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-small btn-primary" %>
     <% end %>
 </div>
+<% unless @shots.empty? %>
   <% @shots.each_slice(4) do |ts|%>
     <div class="row-fluid">
       <ul class="thumbnails">
         <%= render ts %>
       </ul>
     </div>
+  <% end  %>
+<% end  %>
+
+  <% if user_signed_in? %>
+    <%= link_to "Upload a job", {controller: "shots", action: "new"}, class: "btn btn-primary"%>
   <% end %>
 <script type="text/javascript">
   $(document).ready(function(){
     $("img").parent().hover(function() {
-      $(this).stop().animate({opacity: "0"}, 'fast');
+      $(this).stop().animate({opacity: "0.1"}, 'fast');
       $(this).parent().find(".shot-description").stop().animate({opacity: "1"}, 'fast');
       },
     function() {

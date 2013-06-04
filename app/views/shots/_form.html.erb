@@ -1,0 +1,9 @@
+<h2>Upload a shot</h2>
+
+<%= form_for @shot, :html => { :multipart => true } do |form| %>
+      <div><%= form.label :description, "Description" %><br />
+      <%= form.text_field :description %></div>
+      <div><%= form.label :image, "Image" %><br />
+      <%= form.file_field :image %></div>
+      <div><%= form.submit "Submit" %></div>
+<% end %>
