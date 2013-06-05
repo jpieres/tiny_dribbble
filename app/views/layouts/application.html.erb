@@ -16,7 +16,12 @@
           <%= link_to "tiny-dribbble", root_path, id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Shots",    '#' %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "My Shots", root_path %></li>
+                <li><%= link_to "Other Users Shots", shots_path %></li>
+              <% else %>
+                <li><%= link_to "Users Shots", shots_path %></li>
+               <% end %>
               <li><%= link_to "About", about_path %></li>
               <li>
                 <% if user_signed_in? %>

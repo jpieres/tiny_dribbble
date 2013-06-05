@@ -1,5 +1,11 @@
 class ShotsController < ApplicationController
 
+  def index
+
+    @shots = Shot.all
+    @shots -= current_user.shots unless current_user.nil?
+  end
+
   def create
     @shot = current_user.shots.build(params[:shot])
     begin
@@ -20,6 +26,22 @@ class ShotsController < ApplicationController
 
   def new
     @shot = current_user.shots.build
+  end
+
+  def like
+    @id=params[:id]
+    shot = Shot.find @id
+
+    if !(shot.user.id == current_user.id || shot.fans.include?(current_user))
+      shot.fans << current_user
+      shot.save
+    end
+
+    @count = shot.fans.size
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end    
   end
 
 end

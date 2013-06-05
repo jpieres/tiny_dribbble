@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   # attr_accessible :title, :body
   has_many :shots
+  has_and_belongs_to_many :favorite_shots, class_name: "Shot", join_table: "users_favorite_shots" 
 end

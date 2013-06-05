@@ -9,7 +9,10 @@
     <div class="caption">
       <h6>
         <%= shot.user.name %>
-        <a href="#" class="pull-right"><i class="icon-heart"></i> 237</a>
+        <%= link_to like_path(:id => shot.id), { id: "shot_#{shot.id}", class: "pull-right", :"data-toggle" => "tooltip",  title: "I like this shot!", remote: true } do%>
+          <%= content_tag(:i, '', class:"icon-heart" ) %>
+          <%= shot.fans.size %>
+        <% end %>
       </h6>
     </div>
   </div>
