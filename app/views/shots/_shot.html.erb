@@ -3,8 +3,8 @@
     <div class="shot-description">   
       <%= shot.description %>
     </div>
-    <div>
-        <%= image_tag shot.image.url, style: "height: 210px; width:210; align: center;"%>
+    <div class="shot-image" >
+        <%= image_tag shot.image.url(:cropped), style: "height: 210px; width:210; align: center;"%>
     </div>
     <div class="caption">
       <h6>

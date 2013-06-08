@@ -109,8 +109,12 @@ footer ul li {
 
 /* shots */
 
-div .shot-description {
+div.shot-description {
   position: absolute;
   opacity: 0;
   width: 210px;
+}
+
+div.shot-image {
+  text-align: center;
 }
