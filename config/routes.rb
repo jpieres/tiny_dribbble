@@ -6,6 +6,7 @@ TinyDribbble::Application.routes.draw do
   match '/faq',    to: 'site#faq'
   match '/contact', to: 'site#contact'
   match '/shots/:id/like', to: 'shots#like', as: :like
+  match '/shots/like', to: 'shots#like', as: :like
   resources :shots, only: [:create, :destroy, :new, :index]
 
   # The priority is based upon order of creation:
