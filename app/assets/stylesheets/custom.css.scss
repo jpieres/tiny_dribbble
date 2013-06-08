@@ -117,4 +117,12 @@ div.shot-description {
 
 div.shot-image {
   text-align: center;
+  height: 210px;
+  width: 210px;
+}
+
+div.shot-image img{
+  max-height: 100%;
+  max-width: 100%;
+  align: center;
 }
