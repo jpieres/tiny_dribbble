@@ -17,6 +17,9 @@
           <nav>
             <ul class="nav pull-right">
               <% if user_signed_in? %>
+                <li>
+                  <%= link_to "Upload a job", {controller: "shots", action: "new"} %>
+                </li>
                 <li><%= link_to "My Shots", root_path %></li>
                 <li><%= link_to "Other Users Shots", shots_path %></li>
               <% else %>

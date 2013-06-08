@@ -1,9 +1,13 @@
 class ShotsController < ApplicationController
 
   def index
-
     @shots = Shot.all
-    @shots -= current_user.shots unless current_user.nil?
+    if current_user.nil?
+      @header_title = "All users shots"
+    else
+      @shots -= current_user.shots
+      @header_title = "Other users shots"
+    end
   end
 
   def create
